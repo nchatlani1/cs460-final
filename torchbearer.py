@@ -133,7 +133,7 @@ def dijkstra_invariant_check():
 
     TODO
     """
-    return "TODO"
+    return "Part 3a: For nodes already finalized (in S): Finalized distances from the spawn to node. For nodes not yet finalized (not in S): Current cheapest path from source using finalized nodes as waypoints.\n\nPart 3b: Initialization: the invariant holds before iteration 1 because the only known distance is from the source to the source (cost = 0), holds. Maintenance: finalizing the min-dist node is always correct because all of the edge weights are nonnegative so all of the future unfinalized paths would not be able to provide a shorter path compared to node u (from min heap which contains shortest current distance known). Termination: when the algorithm ends, the invariant guarantees that all accessible nodes will be in S and have their shortest path possible.\n\nPart 3c: Distances in between the spawn and the exit that are miscalculated could land the torchbearer in a relic chamber that is not actually as cheap as it seems, therefore using more torch fuel than expected meaning the torchbearers torch could go out unexpectedly..."
 
 
 # =============================================================================
