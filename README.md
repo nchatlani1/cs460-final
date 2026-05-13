@@ -1,54 +1,40 @@
 # The Torchbearer
 
-**Student Name:** ___________________________
-**Student ID:** ___________________________
+**Student Name:** Nitin Chatlani
+**Student ID:** 827870037
 **Course:** CS 460 – Algorithms | Spring 2026
-
-> This README is your project documentation. Write it the way a developer would document
-> their design decisions , bullet points, brief justifications, and concrete examples where
-> required. You are not writing an essay. You are explaining what you built and why you built
-> it that way. Delete all blockquotes like this one before submitting.
 
 ---
 
 ## Part 1: Problem Analysis
 
-> Document why this problem is not just a shortest-path problem. Three bullet points, one
-> per question. Each bullet should be 1-2 sentences max.
-
 - **Why a single shortest-path run from S is not enough:**
-  _Your answer here._
+  The single shortest-path run from S will provide the most effective distance from point a to point b but it doesn't consider any future distances that need to be traveled (and more importantly doesn't consider the final position that is visited). It helps with finding the path from start to a relic individually but won't work for getting through all relics in the least amount because it doesn't optimize total distance, just distance from one point to the next.
 
 - **What decision remains after all inter-location costs are known:**
-  _Your answer here._
-
+After all iter-location costs are known, we still need to figure out the best order to travel to each relic.
 - **Why this requires a search over orders (one sentence):**
-  _Your answer here._
-
+This requires a search over orders because we are optimizing total fuel which depends on the order of visits, which by nature, requires searching each one; ordering also could require a lot of unneccessary computation. 
 ---
 
 ## Part 2: Precomputation Design
 
 ### Part 2a: Source Selection
 
-> List the source node types as a bullet list. For each, one-line reason.
-
 | Source Node Type | Why it is a source |
 |---|---|
-| _node type_ | _one-line reason_ |
-| _node type_ | _one-line reason_ |
+| Spawn Location | This is where the torchbearers journey begins so we must find the most inexpensive distance from them to each relic chamber and the exit |
+| Relic Locations | Each time the torchbearer stops, it is at a relic chamber, so calculating the distance from other relics that we haven't been to yet and to the exit is needed. |
 
 ### Part 2b: Distance Storage
 
-> Fill in the table. No prose required.
-
 | Property | Your answer |
 |---|---|
-| Data structure name | |
-| What the keys represent | |
-| What the values represent | |
-| Lookup time complexity | |
-| Why O(1) lookup is possible | |
+| Data structure name | Nested Dictionary|
+| What the keys represent | Source node rep. outer, relic nodes rep. inner key|
+| What the values represent | minimum fuel cost from point a to b |
+| Lookup time complexity | O(1)|
+| Why O(1) lookup is possible | Because we are utilizing hashmaps which have a key that can be accessed in O(1) time. |
 
 ### Part 2c: Precomputation Complexity
 
