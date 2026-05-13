@@ -46,38 +46,25 @@ This requires a search over orders because we are optimizing total fuel which de
 
 ## Part 3: Algorithm Correctness
 
-> Document your understanding of why Dijkstra produces correct distances.
-> Bullet points and short sentences throughout. No paragraphs.
-
 ### Part 3a: What the Invariant Means
 
-> Two bullets: one for finalized nodes, one for non-finalized nodes.
-> Do not copy the invariant text from the spec.
-
 - **For nodes already finalized (in S):**
-  _Your answer here._
-
+Finalized distances from the spawn to node.
 - **For nodes not yet finalized (not in S):**
-  _Your answer here._
+Current cheapest path from source using finalized nodes as waypoints.
 
 ### Part 3b: Why Each Phase Holds
-
 > One to two bullets per phase. Maintenance must mention nonnegative edge weights.
 
 - **Initialization : why the invariant holds before iteration 1:**
-  _Your answer here._
-
+The invariant holds before interation 1 because the only known distance is from the source to the source (cost = 0), holds.
 - **Maintenance : why finalizing the min-dist node is always correct:**
-  _Your answer here._
-
+Finalizing the min-dist node is always correct becuase all of th edge weights are nonnegative so all of the future unfinalized paths would be able to provide a shorter path copmared to the node u (from min heap which contain shortest CURRENT distance known).
 - **Termination : what the invariant guarantees when the algorithm ends:**
-  _Your answer here._
-
+When the algorithm ends, the invariant guaruntees that all accessable nodes will be in S and have their shortest path possible.
 ### Part 3c: Why This Matters for the Route Planner
 
-> One sentence connecting correct distances to correct routing decisions.
-
-_Your answer here._
+Distances in between the spawn and the exit that are miscalculated could land the torchbearer in a relic chamber that is not actually as cheap as it seems, therefore using more torch fuel than expected meaning the torchbearers torch could go out unexpectedly....
 
 ---
 
