@@ -72,21 +72,15 @@ Distances in between the spawn and the exit that are miscalculated could land th
 
 ### Why Greedy Fails
 
-> State the failure mode. Then give a concrete counter-example using specific node names
-> or costs (you may use the illustration example from the spec). Three to five bullets.
-
-- **The failure mode:** _Your answer here._
-- **Counter-example setup:** _Your answer here._
-- **What greedy picks:** _Your answer here._
-- **What optimal picks:** _Your answer here._
-- **Why greedy loses:** _Your answer here._
+- **The failure mode:** Greedy fails here because it is trying to find the lowest cost between current and the next unvisited relic which can create more cost later (as explained part 3 as well.)
+- **Counter-example setup:** S->B cost = 1, S->C cost = 1, B->D cost = 1, C->D cost 100, D-> T costs 1
+- **What greedy picks:** Greedy would pick S -> C -> D -> B find no path
+- **What optimal picks:** Optimal would pick S,B,D,C,T where the cost is 4
+- **Why greedy loses:** Because it was unable to look ahead to see that there was a future higher cost if taking a path that takes you to the same place.
 
 ### What the Algorithm Must Explore
 
-> One bullet. Must use the word "order."
-
-- _Your answer here._
-
+The algorithm must explore every order that the relics can be traveled to by the torchbearer. It must maintain the amount of fuel being used between each step so that the cost from start to finish can be minimzed. 
 ---
 
 ## Part 5: State and Search Space

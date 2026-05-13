@@ -150,7 +150,7 @@ def explain_search():
 
     TODO
     """
-    return "TODO"
+    return "Why Greedy Fails: The failure mode: Greedy fails here because it is trying to find the lowest cost between current and the next unvisited relic which can create more cost later. Counter-example setup: S->B cost = 1, S->C cost = 1, B->D cost = 1, C->D cost 100, D->T costs 1. What greedy picks: Greedy would pick S->C->D->B and find no path. What optimal picks: Optimal would pick S->B->D->C->T where the cost is 4. Why greedy loses: Because it was unable to look ahead to see that there was a future higher cost if taking a path that takes you to the same place.\n\nWhat the Algorithm Must Explore: The algorithm must explore every order that the relics can be traveled to by the torchbearer. It must maintain the amount of fuel being used between each step so that the cost from start to finish can be minimized."
 
 
 # =============================================================================
