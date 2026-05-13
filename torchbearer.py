@@ -55,7 +55,11 @@ def select_sources(spawn, relics, exit_node):
 
     TODO
     """
-    pass
+    sources = set()
+    sources.add(spawn)
+    for r in relics:
+        sources.add(r)
+    return list(sources)
 
 
 def run_dijkstra(graph, source):
