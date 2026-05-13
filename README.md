@@ -38,13 +38,10 @@ This requires a search over orders because we are optimizing total fuel which de
 
 ### Part 2c: Precomputation Complexity
 
-> State the total complexity and show the arithmetic. Two to three lines max.
-
-- **Number of Dijkstra runs:** _your answer_
-- **Cost per run:** _your answer_
-- **Total complexity:** _your answer_
-- **Justification (one line):** _your answer_
-
+- **Number of Dijkstra runs:** k+1.
+- **Cost per run:** _your O(mlogn)
+- **Total complexity:** O((k+1) * mlogn) = O(k * mlogn) 
+- **Justification (one line):** Every run hits each edge of the min-heap and each node also runs Dijkstras alg.
 ---
 
 ## Part 3: Algorithm Correctness

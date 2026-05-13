@@ -10,7 +10,7 @@
 
 ---
 
-## Entry 1 – [5.13.26]: Initial Plan
+## Entry 1 – [5.13.26 1pm]: Initial Plan
 
 > Required. Write this before writing any code. Describe your plan: what you will
 > implement first, what parts you expect to be difficult, and how you plan to test.
@@ -18,7 +18,9 @@
 I am planning to work through this assignment in four segments. First, I will work on the skeleton in Readme. I will focus code attention on Dijkstra's + precomputation first since those are needed to complete the rest of the parts. I will then work on the backtracking search so I can figure out the slower search methodology to verify. Last will be pruning since we will have verified answers and are now able to optimize how we get them. Lastly,  the solve pipeline. Then comparing values to confirm that its valid against the initial results.  
 ---
 
-## Entry 2 – [Date]: [Short description]
+## Entry 2 – [5.13.26 3:14pm]: [Dijsktras + Precompute Distances]
+
+Created the nested dictionary structure to allow for lookups to be in O(1) time. Implemented Dijkstras and the Precompute_Distances functions. Considered which paths needed to be calculated for Dijsktras algorithm to perform without any extra overhead. 
 
 > Required. At least one entry must describe a bug, wrong assumption, or design change
 > you encountered. Describe what went wrong and how you resolved it.
