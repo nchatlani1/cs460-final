@@ -1,7 +1,7 @@
 # Development Log – The Torchbearer
 
-**Student Name:** ___________________________
-**Student ID:** ___________________________
+**Student Name:** Nitin Chatlani
+**Student ID:** 827870037
 
 > Instructions: Write at least four dated entries. Required entry types are marked below.
 > Two to five sentences per entry is sufficient. Write entries as you go, not all in one
@@ -10,13 +10,12 @@
 
 ---
 
-## Entry 1 – [Date]: Initial Plan
+## Entry 1 – [5.13.26]: Initial Plan
 
 > Required. Write this before writing any code. Describe your plan: what you will
 > implement first, what parts you expect to be difficult, and how you plan to test.
 
-_Your entry here._
-
+I am planning to work through this assignment in four segments. First, I will work on the skeleton in Readme. I will focus code attention on Dijkstra's + precomputation first since those are needed to complete the rest of the parts. I will then work on the backtracking search so I can figure out the slower search methodology to verify. Last will be pruning since we will have verified answers and are now able to optimize how we get them. Lastly,  the solve pipeline. Then comparing values to confirm that its valid against the initial results.  
 ---
 
 ## Entry 2 – [Date]: [Short description]

@@ -2,8 +2,8 @@
 CS 460 – Algorithms: Final Programming Assignment
 The Torchbearer
 
-Student Name: ___________________________
-Student ID:   ___________________________
+Student Name: Nitin Chatlani
+Student ID:   827870037
 
 INSTRUCTIONS
 ------------
@@ -34,8 +34,7 @@ def explain_problem():
 
     TODO
     """
-    return "TODO"
-
+    return "Why a single shortest-path run from S is not enough: The single shortest-path run from S will provide the most effective distance from point a to point b but it doesn't consider any future distances that need to be traveled (and more importantly doesn't consider the final position that is visited). It helps with finding the path from start to a relic individually but won't work for getting through all relics in the least amount because it doesn't optimize total distance, just distance from one point to the next.\n\nWhat decision remains after all inter-location costs are known: After all inter-location costs are known, we still need to figure out the best order to travel to each relic.\n\nWhy this requires a search over orders: This requires a search over orders because we are optimizing total fuel which depends on the order of visits, which by nature, requires searching each one; ordering also could require a lot of unnecessary computation."
 
 # =============================================================================
 # PART 2
