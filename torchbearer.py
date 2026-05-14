@@ -213,6 +213,16 @@ def _explore(dist_table, current_loc, relics_remaining, relics_visited_order,
     explaining why it is safe (cannot skip the optimal solution).
     This comment is graded.
     """
+    if relics_remaining:
+        lower_bound = min(dist_table[current_loc][r] for r in relics_remaining)
+    else:
+        lower_bound = dist_table[current_loc][exit_node]
+
+    # Only prune when the route that is currently being estimated's best case scenario is worse than current. It is safe since the more 
+    #optimal solution would already exist within best[0].
+    if cost_so_far + lower_bound >= best[0]:
+        return
+
     if not relics_remaining:
         cost_to_exit = dist_table[current_loc][exit_node]
         total = cost_so_far + cost_to_exit
@@ -220,6 +230,7 @@ def _explore(dist_table, current_loc, relics_remaining, relics_visited_order,
             best[0] = total
             best[1] = list(relics_visited_order)
         return
+
 
     for relic in list(relics_remaining):
         travel_cost = dist_table[current_loc][relic]
@@ -231,7 +242,7 @@ def _explore(dist_table, current_loc, relics_remaining, relics_visited_order,
                  cost_so_far + travel_cost, exit_node, best)
         relics_remaining.add(relic)
         relics_visited_order.pop()
-        
+
 # =============================================================================
 # PIPELINE
 # =============================================================================
@@ -253,7 +264,9 @@ def solve(graph, spawn, relics, exit_node):
 
     TODO
     """
-    pass
+    dist_table = precompute_distances(graph, spawn, relics, exit_node)
+    return find_optimal_route(dist_table, spawn, relics, exit_node)
+
 
 
 # =============================================================================

@@ -113,30 +113,21 @@ The algorithm must explore every order that the relics can be traveled to by the
 
 ### Part 6a: Best-So-Far Tracking
 
-> Three bullets.
-
-- **What is tracked:** _Your answer here._
-- **When it is used:** _Your answer here._
-- **What it allows the algorithm to skip:** _Your answer here._
+- **What is tracked:** the cheapest cost of fuel found so far for a valid route.
+- **When it is used:** before recursion, the best[0] is used to compare against the current optimistic prediction to decide whether or not to branch. 
+- **What it allows the algorithm to skip:** Creating branches that could have a prospective cost higher than the current cheapest (best[0])
 
 ### Part 6b: Lower Bound Estimation
 
-> Three bullets.
-
-- **What information is available at the current state:** _Your answer here._
-- **What the lower bound accounts for:** _Your answer here._
-- **Why it never overestimates:** _Your answer here._
+- **What information is available at the current state:**  cost_so_far, distances found until that point, and the relic chamber locations that have yet to be visited.
+- **What the lower bound accounts for:** The lower bound accounts for the shortest distance between the torchbearer's current position and any other relic cavern.
+- **Why it never overestimates:** It never overestimates since it is only taking one step into account not the full path to exit utilizing the shortest paths for estimation accuracy.
 
 ### Part 6c: Pruning Correctness
 
-> One to two bullets. Explain why pruning is safe.
-
-- _Your answer here._
-
+Pruning is safe because of which branches we choose to cut. Since we only prune when the most optimistic path is unable to provide something better than current, we never prune useful paths that are more concise.
 ---
 
 ## References
 
-> Bullet list. If none beyond lecture notes, write that.
-
-- _Your references here._
+Lecture notes, slides, course reader
