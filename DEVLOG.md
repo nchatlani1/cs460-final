@@ -22,17 +22,11 @@ I am planning to work through this assignment in four segments. First, I will wo
 
 Created the nested dictionary structure to allow for lookups to be in O(1) time. Implemented Dijkstras and the Precompute_Distances functions. Considered which paths needed to be calculated for Dijsktras algorithm to perform without any extra overhead. 
 
-> Required. At least one entry must describe a bug, wrong assumption, or design change
-> you encountered. Describe what went wrong and how you resolved it.
-
-_Your entry here._
-
 ---
 
-## Entry 3 – [Date]: [Short description]
+## Entry 3 – [5.13.26 7:34pm]: [_explore() + relics_remaining implemented]
 
-_Your entry here._
-
+Implemented _explore(). relics_remaining hits the base case when it becomes empty. The recursive case is running through the still remaining relics, creating new paths, and backtracks as needed. During the development of these two functions I was running into an issue where, when traced, the cost would be correct but the order that should be traveled for optimizing the fuel was incorrect. My code had both a pop() before recursion and then a .add(relic) after which led to new branches colliding into old ones. This was remedied by adding the pop() after the recursive call instead of before it. This ensured that each branch would be empty when it started being formed.
 ---
 
 ## Entry 4 – [Date]: Post-Implementation Reflection

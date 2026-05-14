@@ -87,34 +87,26 @@ The algorithm must explore every order that the relics can be traveled to by the
 
 ### Part 5a: State Representation
 
-> Document the three components of your search state as a table.
-> Variable names here must match exactly what you use in torchbearer.py.
-
 | Component | Variable name in code | Data type | Description |
 |---|---|---|---|
-| Current location | | | |
-| Relics already collected | | | |
-| Fuel cost so far | | | |
+| Current location | current_loc | node(str) | Torchbearer's current location |
+| Relics already collected | relics_remaining | set | The relics which torchbearer has not yet visited |
+| Fuel cost so far | cost_so_far | float | Amount of fuel already used by torchbearer |
 
 ### Part 5b: Data Structure for Visited Relics
 
-> Fill in the table.
-
 | Property | Your answer |
 |---|---|
-| Data structure chosen | |
-| Operation: check if relic already collected | Time complexity: |
-| Operation: mark a relic as collected | Time complexity: |
-| Operation: unmark a relic (backtrack) | Time complexity: |
-| Why this structure fits | |
+| Data structure chosen | Set |
+| Operation: check if relic already collected | Time complexity: O(1)|
+| Operation: mark a relic as collected | Time complexity: O(1) |
+| Operation: unmark a relic (backtrack) | Time complexity: O(1) |
+| Why this structure fits | Becuase it lets you see which relic chambers have already been checked in O(1) |
 
 ### Part 5c: Worst-Case Search Space
 
-> Two bullets.
-
-- **Worst-case number of orders considered:** _Your answer (in terms of k)._
-- **Why:** _One-line justification._
-
+- **Worst-case number of orders considered:** O(k!)
+- **Why:** Becuase with each step you have one less than k relics remaining. When you multiply out (k-1)(k-2)(k-..) it comes out to k! total sequences.
 ---
 
 ## Part 6: Pruning

@@ -177,7 +177,11 @@ def find_optimal_route(dist_table, spawn, relics, exit_node):
 
     TODO
     """
-    pass
+    relics_remaining = set(relics)
+    relics_visited_order = []
+    best = [float('inf'), []]
+    _explore(dist_table, spawn, relics_remaining, relics_visited_order, 0, exit_node, best)
+    return (best[0], best[1])
 
 
 def _explore(dist_table, current_loc, relics_remaining, relics_visited_order,
@@ -209,9 +213,25 @@ def _explore(dist_table, current_loc, relics_remaining, relics_visited_order,
     explaining why it is safe (cannot skip the optimal solution).
     This comment is graded.
     """
-    pass
+    if not relics_remaining:
+        cost_to_exit = dist_table[current_loc][exit_node]
+        total = cost_so_far + cost_to_exit
+        if total < best[0]:
+            best[0] = total
+            best[1] = list(relics_visited_order)
+        return
 
-
+    for relic in list(relics_remaining):
+        travel_cost = dist_table[current_loc][relic]
+        if travel_cost == float('inf'):
+            continue
+        relics_remaining.remove(relic)
+        relics_visited_order.append(relic)
+        _explore(dist_table, relic, relics_remaining, relics_visited_order,
+                 cost_so_far + travel_cost, exit_node, best)
+        relics_remaining.add(relic)
+        relics_visited_order.pop()
+        
 # =============================================================================
 # PIPELINE
 # =============================================================================
