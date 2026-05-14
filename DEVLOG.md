@@ -29,27 +29,24 @@ Created the nested dictionary structure to allow for lookups to be in O(1) time.
 Implemented _explore(). relics_remaining hits the base case when it becomes empty. The recursive case is running through the still remaining relics, creating new paths, and backtracks as needed. During the development of these two functions I was running into an issue where, when traced, the cost would be correct but the order that should be traveled for optimizing the fuel was incorrect. My code had both a pop() before recursion and then a .add(relic) after which led to new branches colliding into old ones. This was remedied by adding the pop() after the recursive call instead of before it. This ensured that each branch would be empty when it started being formed.
 ---
 
-## Entry 4 – [Date]: Post-Implementation Reflection
+## Entry 4 – [5.14.26 3pm]: Post-Implementation Reflection
 
-> Required. Written after your implementation is complete. Describe what you would
-> change or improve given more time.
-
-_Your entry here._
+If given more time for this assignment, I think I would focus more energy on building out more of the prospective test cases that the assignment might be graded on. I think there are a couple edge cases which I left unaccounted. 
 
 ---
 
-## Final Entry – [Date]: Time Estimate
+## Final Entry – [5.14.26]: Time Estimate
 
 > Required. Estimate minutes spent per part. Honesty is expected; accuracy is not graded.
 
 | Part | Estimated Hours |
 |---|---|
-| Part 1: Problem Analysis | |
-| Part 2: Precomputation Design | |
-| Part 3: Algorithm Correctness | |
-| Part 4: Search Design | |
-| Part 5: State and Search Space | |
-| Part 6: Pruning | |
-| Part 7: Implementation | |
-| README and DEVLOG writing | |
-| **Total** | |
+| Part 1: Problem Analysis | .5 |
+| Part 2: Precomputation Design | 1 |
+| Part 3: Algorithm Correctness | 1 |
+| Part 4: Search Design | .5 |
+| Part 5: State and Search Space | 1 |
+| Part 6: Pruning | 1 |
+| Part 7: Implementation | 1.5 |
+| README and DEVLOG writing | 1 |
+| **Total** | 7.5 |
